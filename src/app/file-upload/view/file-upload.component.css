@@ -1,0 +1,68 @@
+.uploader-status ::ng-deep .mat-spinner circle,
+.mat-progress-spinner {
+  stroke: #991b1b;
+  margin-left: auto;
+  margin-right: auto;
+}
+.file-upload-container {
+  border-bottom: 2px solid black;
+  justify-content: center;
+}
+.page-container {
+  padding-inline: 15em;
+}
+.file-upload-section {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  border-width: 3px;
+  border-style: dashed;
+  --tw-border-opacity: 1;
+  border-color: gray;
+  --tw-bg-opacity: 1;
+  background-color: #cbd5e1;
+  padding: 1.5rem;
+  text-align: center;
+}
+.field label {
+  margin-bottom: 0.25rem;
+  display: block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.w-12 {
+  width: 3rem;
+}
+.h-12 {
+  height: 3rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-gray-600 {
+  color: #4e5867;
+}
+.text-gray-500 {
+  color: #6b7280;
+}
+.hidden {
+  display: none;
+}
+img {
+  display: block;
+}
+.is-invalid {
+  border: 3px solid #991b1b;
+}
+.is-valid {
+  border: 3px solid yellowgreen;
+}

@@ -1,0 +1,23 @@
+<ul class="table-list">
+  <ng-container *ngFor="let file of data">
+    <li class="sticky-content">
+      {{ file.contentType | titlecase }}
+    </li>
+    <div class="item-container">
+      <li class="item-header">Name</li>
+      <li class="item-header">Size</li>
+      <li class="item-header">Uploaded Date</li>
+    </div>
+    <div class="item-container" *ngFor="let item of file.files">
+      <li class="item">
+        {{ item.name }}
+      </li>
+      <li class="item">
+        {{ item.size }}
+      </li>
+      <li class="item">
+        {{ item.uploadDate | date }}
+      </li>
+    </div>
+  </ng-container>
+</ul>

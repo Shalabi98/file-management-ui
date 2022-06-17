@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: Poppins, "Open Sans", sans-serif;
+  font-size: calc(0.25em + 1vmin);
+  scroll-behavior: smooth;
+}
+table {
+  text-align: center;
+  width: 100%;
+}
+td {
+  border: 1px solid #ccc;
+}
+.success-snackbar {
+  background-color: rgb(0, 0, 0);
+  color: greenyellow;
+}
+.error-snackbar {
+  background-color: rgb(0, 0, 0);
+  color: salmon;
+}
+.mat-simple-snackbar-action {
+  color: white !important;
+}

@@ -1,0 +1,50 @@
+<div class="page-container">
+  <div
+    class="file-upload-section field"
+    [ngClass]="{ 'is-invalid': message.length, 'is-valid': success }"
+  >
+    <label for="file" class="cursor-pointer">
+      <img
+        src="https://cdn.discordapp.com/attachments/925351809529282611/986798808895737866/upload.png"
+        alt="upload"
+        class="w-12 h-12 mx-auto mt-2"
+      />
+      <span class="text-gray-600">
+        <strong>Upload File</strong>
+      </span>
+    </label>
+    <div *ngIf="fileName" class="progress mt-2">
+      <b> Uploading "{{ fileName }}"... </b>
+    </div>
+    <br />
+    <div class="uploader-status">
+      <mat-progress-spinner *ngIf="loading" mode="indeterminate" diameter="40">
+      </mat-progress-spinner>
+    </div>
+    <input
+      #uploader
+      required
+      id="file"
+      type="file"
+      class="text-nowrap text-truncate hidden"
+      (change)="fileInputHandler($event)"
+    /> <!-- 'accept' can be used for client side validation, not used here so different cases of bad requests can be tested-->
+    <br />
+    <div style="color: #991b1b; text-align: center">
+      {{ message }}
+    </div>
+  </div>
+  <ng-container *ngIf="fileViewData$ | async as fileViewData; else noData">
+    <ng-container *ngIf="fileViewData.length; else noData">
+      <!-- render child "file-view.component"-->
+      <app-file-view [data]="fileViewData"></app-file-view>
+    </ng-container>
+  </ng-container>
+  <ng-template #noData>
+    <mat-card>
+      <div style="color: #991b1b; text-align: center">
+        <b>No file record(s) to display.</b>
+      </div>
+    </mat-card>
+  </ng-template>
+</div>
